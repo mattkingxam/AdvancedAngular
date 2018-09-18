@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { GitSearchService } from './git-search.service';
 import { GitCodeSearchService } from './git-code-search.service';
+import { UnifiedSearchService } from './unified-search.service';
 import { GitSearchComponent } from './git-search/git-search.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -46,7 +47,7 @@ const appRoutes: Routes = [
     ),
     ReactiveFormsModule
   ],
-  providers: [GitSearchService, GitCodeSearchService],
+  providers: [GitSearchService, GitCodeSearchService, UnifiedSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
