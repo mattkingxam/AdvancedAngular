@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { GitCodeSearch } from './git-code-search';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { rxjs/add/operator / publishReplay};
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/publishReplay';
+
 
 @Injectable()
 export class GitCodeSearchService {
   cachedValue: string;
-  search: Observable<GitSearch>
+  search: Observable<GitCodeSearch>
   constructor(private http: HttpClient) { }
   codeSearch: Function = (query: string): Observable<GitCodeSearch> => {
     if (query.indexOf('user') <= -1) {
